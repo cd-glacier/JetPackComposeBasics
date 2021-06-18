@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Surface
@@ -58,8 +60,8 @@ fun MyScreenContent(names: List<String> = List(1000) { "Hello Android #$it" }) {
 
 @Composable
 fun NameList(names: List<String>, modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        for (name in names) {
+    LazyColumn(modifier = modifier) {
+        items(items = names) { name ->
             Greeting(name = name)
             Divider(color = Color.Black)
         }
