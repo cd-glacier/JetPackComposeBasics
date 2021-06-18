@@ -11,17 +11,14 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Surface
+import androidx.compose.material.*
 import androidx.compose.material.TabRowDefaults.Divider
-import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.jetpackcomposebasics.ui.theme.BacisCodelabTheme
+import com.example.jetpackcomposebasics.ui.theme.BasicsCodelabTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +33,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyApp(content: @Composable () -> Unit) {
-    BacisCodelabTheme {
+    BasicsCodelabTheme {
         Surface(color = Color.Yellow) {
             content()
         }
@@ -79,7 +76,8 @@ fun Greeting(name: String) {
         modifier = Modifier
             .padding(24.dp)
             .background(color = backgroundColor)
-            .clickable(onClick = { isSelected = !isSelected })
+            .clickable(onClick = { isSelected = !isSelected }),
+        style = MaterialTheme.typography.h1
     )
 }
 
